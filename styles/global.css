@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        font-size: 16px;
+    }
+    @media screen and (min-width: 768px) {
+        html {
+            font-size: 18px;
+        }
+    }
+
+    * {
+      @apply box-border;
+    }
+
+    a {
+      @apply text-blue-500;
+      @apply no-underline
+    }
+
+    a:hover {
+      @apply underline;
+    }
+    address {
+        @apply not-italic;
+        @apply text-sm;
+        @apply oldstyle-nums;
+    }
+    details div {
+        @apply ml-4;
+    }
+    figure {}
+    figure img {}
+    figcaption { 
+        @apply my-4;
+    }
+
+    img {
+      @apply max-w-full;
+    }
+    input[type="button"],
+    button,
+    button[type="button"],
+    [type="reset"],
+    [type="submit"] {
+        @apply bg-tan-500;
+        @apply border;
+        @apply rounded-[6px];
+        @apply py-3;
+        @apply px-5;
+        @apply mb-4;
+        @apply cursor-pointer;
+        @apply shadow-none;
+        @apply transition-all;
+        @apply font-bold;
+    }
+    input[type="button"]:hover,
+    button:hover,
+    button[type="button"]:hover,
+    [type="reset"]:hover,
+    [type="submit"]:hover {
+        @apply -translate-y-1;
+        @apply shadow-md;
+    }
+    input[type="button"]:active,
+    button:active,
+    button[type="button"]:active,
+    [type="reset"]:active,
+    [type="submit"]:active {
+        @apply translate-y-1;
+        @apply shadow-sm;
+    }
+    button:disabled,
+    input:disabled {
+        @apply bg-gray-100;
+        @apply cursor-not-allowed;
+        @apply shadow-none;
+    }
+    button:disabled:hover,
+    input:disabled:hover {
+        @apply translate-y-0;
+        @apply shadow-none;
+    }
+    h1 {
+        @apply text-7xl;
+    }
+    h2 {
+        @apply text-5xl;
+    }
+    h3 {
+        @apply text-4xl
+    }
+    h4 {
+        @apply text-2xl;
+    }
+    h5 {
+        @apply text-xl;
+    }
+    h6 {
+        @apply text-lg;
+    }
+}
