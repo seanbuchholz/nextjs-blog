@@ -47,9 +47,16 @@ export default function Home({ allPostsData }) {
 
     function handleJoyrideCallback(data) {
       const { action, index, status, type } = data;
-
+      console.log(data)
+      console.log(data.index);
       if ([ EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND ].includes(type)) {
         setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1))
+      }
+      else if ([ACTIONS.UPDATE].includes(action) && index == 0 && [EVENTS.TOOLTIP].includes(type)) {
+        console.log('THIS IS WHERE WE WOULD SET A STARTING COOKIE')
+      }
+      else if ([EVENTS.TOOLTIP].includes(type)) {
+        console.log('TOOLTIP')
       }
       else if ([STATUS.SKIPPED].includes(status)) {
         console.log('SKIPPED!')
